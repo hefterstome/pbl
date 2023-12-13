@@ -167,12 +167,9 @@
                 <label for="isi">Pesan</label>
                 <textarea class="form-control" name="isi" id="isi" rows="10" required></textarea>
               </div>
-              <div class="text-center mt-4"><button type="submit">Kirim</button></div>
-              {{-- <div class="text-center mt-4">
-                <div class="col-4 mx-auto">
-                 <button type="submit" class="btn btn-primary">Kirim</button>
-                </div>
-              </div> --}}
+              <div class="text-center mt-4">
+                <button type="submit">Kirim</button>
+              </div>
             </form>
           </div>
         </div>
