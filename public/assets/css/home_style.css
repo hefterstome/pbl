@@ -269,55 +269,6 @@ section {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
-.contact .kontak-pesan .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.contact .kontak-pesan .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .kontak-pesan .error-message br+br {
-  margin-top: 25px;
-}
-
-.contact .kontak-pesan .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .kontak-pesan .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .kontak-pesan .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
-}
-
 .contact .kontak-pesan label {
   padding-bottom: 8px;
 }
@@ -354,16 +305,6 @@ section {
 
 .contact .kontak-pesan button[type=submit]:hover {
   background: #209dd8;
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 
