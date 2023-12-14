@@ -146,7 +146,7 @@ a:hover {
   background: #209dd8;
 }
 
-#hero .animated {
+/* #hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
@@ -158,7 +158,7 @@ a:hover {
   100% {
     transform: translateY(-10px);
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Sections General
