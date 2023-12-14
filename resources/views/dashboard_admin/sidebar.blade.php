@@ -28,8 +28,8 @@
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link text-white">
-            Products
+            <a href="/data-pesan" class="nav-link text-white">
+            Data Pesan
             </a>
         </li>
     </ul>

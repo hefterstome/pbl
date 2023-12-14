@@ -8,8 +8,8 @@ body{
 }
 
 #form{
-    width:500px;
-    margin:20vh auto 0 auto;
+    width:600px;
+    margin:5vh auto 5vh auto;
 	background-color: whitesmoke;
     border-radius: 5px;
     padding:30px;
@@ -40,7 +40,7 @@ h1{
 
 .input-group input{
     border-radius: 5px;
-    font-size:20px;
+    font-size:16px;
     margin-top:5px;
     padding:10px;
     border:1px solid rgb(34,193,195) ;

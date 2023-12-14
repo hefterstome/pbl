@@ -38,5 +38,7 @@ Route::get('/warga-profil', [WargaController::class, 'profil'])->name('Profil Wa
 Route::get('/warga-form-pengajuan', [WargaController::class, 'form'])->name('Formulir Pengajuan');
 
 Route::post('/', [PesanController::class, 'store'])->name('pesan.store');
+Route::get('/data-pesan', [PesanController::class, 'index']);
+Route::post('/pesan/delete/{id}', [PesanController::class, 'destroy'])->name('pesan.delete');
 
 

@@ -96,6 +96,14 @@ dl {
   margin-top: 0;
   margin-bottom: 1rem; }
 
+.form-group p {
+  margin-top: 10px;
+  color: none;
+  border-color: #0b2e13;
+
+}
+
+
 ol ol,
 ul ul,
 ol ul,
@@ -221,7 +229,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button; }
+  -webkit-appearanc: button; }
 
 button:not(:disabled),
 [type="button"]:not(:disabled),
@@ -246,7 +254,7 @@ input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
-  -webkit-appearance: listbox; }
+  -webkit-appearanc: listbox; }
 
 textarea {
   overflow: auto;
@@ -278,7 +286,7 @@ progress {
 
 [type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: none; }
+  -webkit-appearanc: none; }
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -3015,7 +3023,7 @@ input[type="button"].btn-block {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
   .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
-    border-color: #; }
+    border-color: #37517e }
   .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
     color: #fff;
     background-color: #b3d7ff;
