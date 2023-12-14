@@ -17,11 +17,7 @@ class HomeController extends Controller
     public function admin(){
         return view('page.login-admin');
     }
-    // public function registrasi(){
-    //     return view('page.registrasi');
-    // }
-
-    // public function dash_warga(){
-    //     return view('dashboard_warga.warga');
-    // }
+    public function registrasi(){
+        return view('page.registrasi');
+    }
 }
