@@ -9,7 +9,7 @@ class PesanController extends Controller
 {
     public function index(){
         $data = Pesan::all();
-            return view('home',['dataPesan' => $data]);
+            return view('dashboard_admin.pesan.index',['dataPesan' => $data]);
     }
 
     public function create(){
@@ -24,5 +24,11 @@ class PesanController extends Controller
         $data->isi = $request->isi;
         $data->save();
         return redirect('/');
+    }
+
+    public function destroy($id){
+        $data = Pesan::find($id);
+        $data->delete();
+        return redirect('/data-pesan');
     }
 }
