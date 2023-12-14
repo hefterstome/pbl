@@ -8,7 +8,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
 	<link rel="stylesheet" href="assets/css/login_style.css">
 
 	</head>
@@ -21,7 +20,7 @@
 		      	<div class="icon d-flex align-items-center justify-content-center" style="background-color: #37517e;">
 		      		<span class="fa fa-user-o"></span>
 		      	</div>
-		      	<h3 class="text-center mb-4">LOGIN</h3>
+		      	<h3 class="text-center mb-4">LOGIN ADMIN</h3>
 						<form action="#" class="login-form">
 		      		<div class="form-group">
 		      			<input type="text" class="form-control rounded-left" placeholder="Username" required>
@@ -34,13 +33,6 @@
 						<p style="color: #FFFFFF; margin: 0; font-size: 24px;">Login</p>
 					</button>
 				</div>			
-				<div class="form-group text-center">
-					<p>Belum punya akun?
-                        <a href="/registrasi" class style="color: #336EFF; ">
-                            Daftar Sekarang
-                        </a>
-                    </p>
-				</div>		
 	            </div>
 	          </form>
 	        </div>
