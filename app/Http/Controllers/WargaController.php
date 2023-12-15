@@ -10,13 +10,16 @@ class WargaController extends Controller
         return view('dashboard_warga.warga');
     }
     public function pengajuan(){
-        return view('dashboard_warga.pengajuan.pengajuan_data');
+        return view('dashboard_warga.pengajuan.index');
     }
     public function profil(){
         return view('dashboard_warga.profil');
     }
     public function form(){
-        return view('dashboard_warga.pengajuan.pengajuan_form');
+        return view('dashboard_warga.pengajuan.form');
+    }
+    public function home(){
+        return view('dashboard_warga.warga');
     }
 
 }
