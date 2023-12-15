@@ -1,4 +1,4 @@
-@extends('dashboard_warga.layouts.master_dashboard_warga')
+@extends('dashboard_warga.layouts.master')
 @section('content')
         <div class="container-fluid" style="background: #f3f5fa">
             <div class="row justify-content-center">

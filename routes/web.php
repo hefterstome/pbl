@@ -27,16 +27,17 @@ Route::get('dash-admin', function () {
 
 
 Route::get('/', [HomeController::class, 'home'])->name('Home');
-Route::get('/login', [HomeController::class, 'login'])->name('Login');
-Route::get('/admin', [HomeController::class, 'admin'])->name('Login Admin');
+Route::get('/login', [HomeController::class, 'login']);
+Route::get('/admin', [HomeController::class, 'admin']);
 Route::get('/registrasi', [HomeController::class, 'registrasi'])->name('Registrasi');
 
+Route::get('/warga', [WargaController::class, 'warga']);
+Route::get('/', [WargaController::class, 'home']);
+Route::get('/warga-pengajuan', [WargaController::class, 'pengajuan']);
+Route::get('/warga-profil', [WargaController::class, 'profil']);
+Route::get('/warga-form-pengajuan', [WargaController::class, 'form']);
 
-Route::get('/warga', [WargaController::class, 'warga'])->name('Warga');
-Route::get('/warga-pengajuan', [WargaController::class, 'pengajuan'])->name('Data Pengajuan');
-Route::get('/warga-profil', [WargaController::class, 'profil'])->name('Profil Warga');
-Route::get('/warga-form-pengajuan', [WargaController::class, 'form'])->name('Formulir Pengajuan');
-
+// Ini sudah selesai
 Route::post('/', [PesanController::class, 'store'])->name('pesan.store');
 Route::get('/data-pesan', [PesanController::class, 'index']);
 Route::post('/pesan/delete/{id}', [PesanController::class, 'destroy'])->name('pesan.delete');

@@ -13,13 +13,18 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
+            <a href="/" class="nav-link text-white" aria-current="page">
+            Home
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="/warga-profil" class="nav-link text-white" aria-current="page">
             Profil
             </a>
         </li>
         <li>
-            <a class="nav-link text-white" style="background-color: #37517e;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                Pengajuan <i class="fa-solid fa-chevron-down"></i>
+            <a class="nav-link text-white" style="background-color: #37517e;" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Pengajuan <i class="fa-solid fa-caret-down"></i>
               </a>
             <div class="collapse" id="collapseExample">
               <div style="background-color: #37517e;">
