@@ -23,17 +23,17 @@
             </a>
         </li>
         <li>
-            <a href="/data-warga" class="nav-link text-white">
+            <a href="/admin/data-warga" class="nav-link text-white">
             Data Warga 
             </a>
         </li>
         <li>
-            <a href="/data-admin" class="nav-link text-white">
+            <a href="/admin/data-admin" class="nav-link text-white">
             Data Admin
             </a>
         </li>
         <li>
-            <a href="/data-pesan" class="nav-link text-white">
+            <a href="/admin/data-pesan" class="nav-link text-white">
             Data Pesan
             </a>
         </li>

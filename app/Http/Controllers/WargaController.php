@@ -13,8 +13,19 @@ class WargaController extends Controller
             return view('dashboard_admin.warga.index',['dataWarga' => $data]);
     }
 
-    public function create(){
-        return view('home');
+    // public function create(){
+    //     return view('page.registrasi');
+    // }
+
+    public function store(Request $request){
+        $data = new Warga();
+        $data->nik = $request->nik;
+        $data->nama = $request->nama;
+        $data->email = $request->email;
+        $data->password = $request->password;
+        $data->no_hp = $request->no_hp;
+        $data->save();
+        return redirect('/login');
     }
 
     public function destroy($nik){

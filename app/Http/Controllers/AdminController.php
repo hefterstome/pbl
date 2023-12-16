@@ -36,7 +36,7 @@ class AdminController extends Controller
         $data->password = $request->password;
         $data->no_hp = $request->no_hp;
         $data->save();
-        return redirect('/data-admin');
+        return redirect('/admin/data-admin');
     }
 
     /**
