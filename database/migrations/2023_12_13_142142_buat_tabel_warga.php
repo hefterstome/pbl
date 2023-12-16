@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('warga',function(Blueprint $table){
-        //     $table->char('nik');
-        //     $table->string('nama');
-        //     $table->string('email');
-        //     $table->string('password');
-        //     $table->string('no_hp');
-        //     $table->timestamps();
-        // });
+        Schema::create('warga',function(Blueprint $table){
+            $table->char('nik');
+            $table->string('nama');
+            $table->string('email');
+            $table->string('password');
+            $table->string('no_hp');
+            $table->timestamps();
+        });
     }
 
     /**

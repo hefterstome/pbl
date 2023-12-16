@@ -154,8 +154,8 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="{{ route('pesan.store') }}" method="POST" class="kontak-pesan">
-                @csrf
+             <form action="{{ route('pesan.store') }}" method="POST" class="kontak-pesan"> 
+                 @csrf 
                 <h4 class="keterangan-form text-center mb-2" style="font-size: 18px; color: #37517e;">Isi formulir untuk memberikan laporan atau pesan</h4>
                 <div class="form-group mt-4">
                   <label for="nama">Nama</label>

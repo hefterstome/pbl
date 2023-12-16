@@ -39,9 +39,9 @@ Route::get('/warga/profil', [WargaController::class, 'profil']);
 Route::get('/warga/form', [WargaController::class, 'form']);
 
 // Ini sudah selesai
-Route::post('/', [PesanController::class, 'store'])->name('pesan.store');
-Route::get('/data-pesan', [PesanController::class, 'index']);
-Route::post('/pesan/delete/{id}', [PesanController::class, 'destroy'])->name('pesan.delete');
+// Route::post('/', [PesanController::class, 'store'])->name('pesan.store');
+// Route::get('/data-pesan', [PesanController::class, 'index']);
+// Route::post('/pesan/delete/{id}', [PesanController::class, 'destroy'])->name('pesan.delete');
 
 
 Route::post('/', [WargaController::class, 'store'])->name('warga.store');
@@ -53,3 +53,6 @@ Route::get('/data-admin', [AdminController::class, 'index']);
 Route::get('/admin/insert', [AdminController::class, 'create'])->name('admin.create');
 Route::post('/data-admin', [AdminController::class, 'store'])->name('admin.store');
 Route::post('/admin/delete/{nip}', [AdminController::class, 'destroy'])->name('admin.delete');
+
+Route::get('/admin/edit/{nip}', [AdminController::class, 'edit'])->name('admin.edit');
+Route::post('/admin/edit/{nip}', [AdminController::class, 'update'])->name('admin.update');

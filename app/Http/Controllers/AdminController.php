@@ -50,17 +50,27 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($nip)
     {
         //
+        $data = Admin::find($nip);
+        return view('dashboard_admin.admin.edit', compact('data'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $nip)
     {
-        //
+        //public function update($nip) {
+            $data = Admin::findOrFail($nip);
+            $data->nip = $request->nip; // Ganti dengan atribut yang sesuai
+            $data->nama = $request->nama;
+            $data->email = $request->email;
+            $data->no_hp = $request->no_hp;
+            $data->update();
+            return redirect('/data-admin');
     }
 
     /**
@@ -72,4 +82,8 @@ class AdminController extends Controller
         $data->delete();
         return redirect('/data-admin');
     }
+
+   
+
+    
 }
