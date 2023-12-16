@@ -11,7 +11,6 @@
                 <th style="width: 5%">NIK</th>
                 <th style="width: 5%">Nama</th>
                 <th style="width: 5%">Email</th>
-                <!-- <th style="width: 5%">Password</th> -->
                 <th style="width: 5%">No HP</th>
                 <th style="width: 5%">Aksi</th>
             </tr>
@@ -23,7 +22,6 @@
                 <td>{{ $data->nik }}</td>
                 <td>{{ $data->nama }}</td>
                 <td>{{ $data->email }}</td>
-                <!-- <td>{{ $data->password }}</td> -->
                 <td>{{ $data->no_hp }}</td>
                 <td class="text-center">
                     <form action="{{ route('warga.delete', $data->nik) }}" method="post">

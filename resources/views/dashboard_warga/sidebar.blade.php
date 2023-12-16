@@ -13,7 +13,7 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-            <a href="/" class="nav-link text-white" aria-current="page">
+            <a href="/warga" class="nav-link text-white" aria-current="page">
             Home
             </a>
         </li>

@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-end mt-2">
-                <a href="/data-admin" class="btn btn-secondary mx-2">Kembali</a>
+                <a href="/admin/data-admin" class="btn btn-secondary mx-2">Kembali</a>
                 <button type="submit" class="btn btn-primary mx-2">Kirim</button>
             </div>
         </div>
