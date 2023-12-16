@@ -11,22 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengajuan',function(Blueprint $table){
-            $table->char('no_kk');
-            $table->string('verifikator');
-            $table->string('nik');
-            $table->string('nama');
-            $table->string('email');
-            $table->string('alamat');
-            $table->string('pekerjaan');
-            $table->integer('pendapatan');
-            $table->integer('luas_bangunan');
-            $table->integer('jumlah_kendaraan');
-            $table->integer('jumlah_tanggungan_anak');
-            $table->integer('listrik_rumah');
-            $table->string('status');
-            $table->timestamps();
-        });
+        // Schema::create('pengajuan',function(Blueprint $table){
+        //     $table->char('no_kk');
+        //     $table->string('verifikator');
+        //     $table->string('nik');
+        //     $table->string('nama');
+        //     $table->string('email');
+        //     $table->string('alamat');
+        //     $table->string('pekerjaan');
+        //     $table->integer('pendapatan');
+        //     $table->integer('luas_bangunan');
+        //     $table->integer('jumlah_kendaraan');
+        //     $table->integer('jumlah_tanggungan_anak');
+        //     $table->integer('listrik_rumah');
+        //     $table->string('status');
+        //     $table->timestamps();
+        // });
     }
 
     /**
