@@ -4,15 +4,16 @@
 
 <div class="container">
     <h2>Tabel Data Admin</h2>
+    <a href ="{{route('admin.create')}}" class="btn btn-primary mt-4 mb-2"><i class="fa-solid fa-user-plus"></i> Tambah User</a>
     <table class="table table-bordered table-striped mt-3" id="data-admin">
         <thead class="text-center">
             <tr>
                 <th style="width: 1%">No</th>
-                <th style="width: 5%">NIP</th>
-                <th style="width: 5%">Nama</th>
-                <th style="width: 5%">Email</th>
-                <th style="width: 5%">Nomor HP</th>
-                <th style="width: 5%">Aksi</th>
+                <th>NIP</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Nomor HP</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -28,9 +29,10 @@
                         @csrf
                         <button class="btn btn-danger">Hapus</button>
                     </form> --}}
-                    <form action="">
-                        <button class="btn btn-danger"> <i class="fas fa-trash-alt"></i></button>
-                        <button class="btn btn-warning"> <i class="fas fa-edit"></i></button>                        
+                    <form action="{{ route('admin.delete', $data->nip) }}" method="post">
+                        @csrf
+                        <a href="" class="btn btn-warning"><i class="fa-solid fa-pen-to-square" style="color: white;"></i></a>
+                        <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </form>
                 </td>
             </tr>

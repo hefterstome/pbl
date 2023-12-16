@@ -18,7 +18,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="/warga-profil" class="nav-link text-white" aria-current="page">
+            <a href="/warga/profil" class="nav-link text-white" aria-current="page">
             Profil
             </a>
         </li>
@@ -28,8 +28,8 @@
               </a>
             <div class="collapse" id="collapseExample">
               <div style="background-color: #37517e;">
-                <a class="nav-link text-white" href="/warga-form-pengajuan">Formulir Pengajuan</a>
-                <a class="nav-link text-white" href="/warga-pengajuan">Data Pengajuan</a>
+                <a class="nav-link text-white" href="/warga/form">Formulir Pengajuan</a>
+                <a class="nav-link text-white" href="/warga/pengajuan">Data Pengajuan</a>
               </div>
             </div>
         </li>
