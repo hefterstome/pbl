@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengajuan',function(Blueprint $table){
-            $table->id();
-            $table->char('no_kk');
-            $table->string('ktp');
-            $table->string('kk');
-            $table->string('surat_pendukung');
-            $table->string('slip_gaji');
-            $table->string('foto');
-            $table->timestamps();
-        });
+        // Schema::create('pengajuan',function(Blueprint $table){
+        //     $table->id();
+        //     $table->char('no_kk');
+        //     $table->string('ktp');
+        //     $table->string('kk');
+        //     $table->string('surat_pendukung');
+        //     $table->string('slip_gaji');
+        //     $table->string('foto');
+        //     $table->timestamps();
+        // });
     }
 
     /**

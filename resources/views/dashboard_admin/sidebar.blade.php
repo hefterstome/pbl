@@ -28,6 +28,11 @@
             </a>
         </li>
         <li>
+            <a href="/data-admin" class="nav-link text-white">
+            Data Admin
+            </a>
+        </li>
+        <li>
             <a href="/data-pesan" class="nav-link text-white">
             Data Pesan
             </a>
