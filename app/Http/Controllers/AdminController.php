@@ -15,6 +15,7 @@ class AdminController extends Controller
             return view('dashboard_admin.admin.index',['dataAdmin' => $data]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      */

@@ -43,6 +43,11 @@ Route::post('/', [PesanController::class, 'store'])->name('pesan.store');
 Route::get('/data-pesan', [PesanController::class, 'index']);
 Route::post('/pesan/delete/{id}', [PesanController::class, 'destroy'])->name('pesan.delete');
 
+
+Route::post('/', [WargaController::class, 'store'])->name('warga.store');
+Route::get('/data-warga', [WargaController::class, 'index']);
+Route::post('/warga/delete/{nik}', [WargaController::class, 'destroy'])->name('warga.delete');
+
 // Admin
 Route::get('/data-admin', [AdminController::class, 'index']);
 
