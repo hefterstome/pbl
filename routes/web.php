@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\WargaController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,5 +42,9 @@ Route::get('/warga-form-pengajuan', [WargaController::class, 'form']);
 Route::post('/', [PesanController::class, 'store'])->name('pesan.store');
 Route::get('/data-pesan', [PesanController::class, 'index']);
 Route::post('/pesan/delete/{id}', [PesanController::class, 'destroy'])->name('pesan.delete');
+
+Route::post('/', [AdminController::class, 'store'])->name('data_warga.store');
+Route::get('/data-warga', [AdminController::class, 'index']);
+Route::post('/data_warga/delete/{nik}', [AdminController::class, 'destroy'])->name('data_warga.delete');
 
 

@@ -23,6 +23,9 @@
         $(document).ready(function (){
             $('#data-pesan').DataTable();
         });
+        $(document).ready(function (){
+            $('#data-warga').DataTable();
+        });
     </script>
 </body>
 </html>
