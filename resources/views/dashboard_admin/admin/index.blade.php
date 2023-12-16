@@ -26,12 +26,14 @@
                 <td>{{ $data->no_hp }}</td>
                 <td class="text-center">
                     {{-- <form action="{{ route('pesan.delete', $data->id) }}" method="post">
+
                         @csrf
                         <button class="btn btn-danger">Hapus</button>
-                    </form> --}}
-                    <form action="{{ route('admin.delete', $data->nip) }}" method="post">
+                        </form> --}}
+                        <form action="{{ route('admin.delete', $data->nip) }}" method="post">
+                       
                         @csrf
-                        <a href="" class="btn btn-warning"><i class="fa-solid fa-pen-to-square" style="color: white;"></i></a>
+                        <a href="{{ route('admin.update', $data->nip) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square" style="color: white;"></i></a>
                         <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </form>
                 </td>

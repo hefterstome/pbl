@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('pesan',function(Blueprint $table){
-        //     $table->id();
-        //     $table->string('nama');
-        //     $table->string('email');
-        //     $table->string('isi');
-        //     $table->timestamps();
-        // });
+        Schema::create('pesan',function(Blueprint $table){
+            $table->id();
+            $table->string('nama');
+            $table->string('email');
+            $table->string('isi');
+            $table->timestamps();
+        });
     }
 
     /**
