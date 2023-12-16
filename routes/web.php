@@ -34,9 +34,9 @@ Route::get('/registrasi', [HomeController::class, 'registrasi'])->name('Registra
 
 Route::get('/warga', [WargaController::class, 'warga']);
 Route::get('/home', [WargaController::class, 'home']);
-Route::get('/warga-pengajuan', [WargaController::class, 'pengajuan']);
-Route::get('/warga-profil', [WargaController::class, 'profil']);
-Route::get('/warga-form-pengajuan', [WargaController::class, 'form']);
+Route::get('/warga/pengajuan', [WargaController::class, 'pengajuan']);
+Route::get('/warga/profil', [WargaController::class, 'profil']);
+Route::get('/warga/form', [WargaController::class, 'form']);
 
 // Ini sudah selesai
 Route::post('/', [PesanController::class, 'store'])->name('pesan.store');
@@ -50,4 +50,6 @@ Route::post('/warga/delete/{nik}', [WargaController::class, 'destroy'])->name('w
 
 // Admin
 Route::get('/data-admin', [AdminController::class, 'index']);
-
+Route::get('/admin/insert', [AdminController::class, 'create'])->name('admin.create');
+Route::post('/data-admin', [AdminController::class, 'store'])->name('admin.store');
+Route::post('/admin/delete/{nip}', [AdminController::class, 'destroy'])->name('admin.delete');

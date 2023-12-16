@@ -21,7 +21,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard_admin.admin.create');
     }
 
     /**
@@ -29,7 +29,14 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Admin();
+        $data->nip = $request->nip;
+        $data->nama = $request->nama;
+        $data->email = $request->email;
+        $data->password = $request->password;
+        $data->no_hp = $request->no_hp;
+        $data->save();
+        return redirect('/data-admin');
     }
 
     /**
@@ -59,8 +66,10 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $nip)
     {
-        //
+        $data = Admin::find($nip);
+        $data->delete();
+        return redirect('/data-admin');
     }
 }
