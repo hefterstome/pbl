@@ -44,6 +44,7 @@ Route::get('/warga/form', [WargaController::class, 'form']);
 // Route::post('/pesan/delete/{id}', [PesanController::class, 'destroy'])->name('pesan.delete');
 
 
+
 Route::post('/', [WargaController::class, 'store'])->name('warga.store');
 Route::get('/data-warga', [WargaController::class, 'index']);
 Route::post('/warga/delete/{nik}', [WargaController::class, 'destroy'])->name('warga.delete');
