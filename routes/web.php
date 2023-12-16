@@ -42,18 +42,20 @@ Route::get('/warga/pengajuan', [WargaController::class, 'pengajuan']);
 Route::get('/warga/profil', [WargaController::class, 'profil']);
 Route::get('/warga/form', [WargaController::class, 'form']);
 
-// Ini sudah selesai
-Route::post('/', [PesanController::class, 'store'])->name('pesan.store');
-Route::get('/data-pesan', [PesanController::class, 'index']);
-Route::post('/pesan/delete/{id}', [PesanController::class, 'destroy'])->name('pesan.delete');
-
 // Data pesan --> Dashboard admin
 Route::post('/admin/data-pesan', [PesanController::class, 'store'])->name('pesan.store');
 Route::get('/admin/data-pesan', [PesanController::class, 'index']);
 Route::post('admin/data-pesan/delete/{id}', [PesanController::class, 'destroy'])->name('pesan.delete');
 
-// Admin
-Route::get('/data-admin', [AdminController::class, 'index']);
-Route::get('/admin/insert', [AdminController::class, 'create'])->name('admin.create');
-Route::post('/data-admin', [AdminController::class, 'store'])->name('admin.store');
-Route::post('/admin/delete/{nip}', [AdminController::class, 'destroy'])->name('admin.delete');
+// Data Admin --> Dashboard admin
+Route::get('admin/data-admin', [AdminController::class, 'index']);
+Route::post('admin/data-admin', [AdminController::class, 'store'])->name('admin.store');
+Route::get('admin/admin/insert', [AdminController::class, 'create'])->name('admin.create');
+Route::post('admin/admin/delete/{nip}', [AdminController::class, 'destroy'])->name('admin.delete');
+Route::get('/admin/edit/{nip}', [AdminController::class, 'edit'])->name('admin.edit');
+Route::post('/admin/edit/{nip}', [AdminController::class, 'update'])->name('admin.update');
+
+// Data Warga --> Dashboard admin
+Route::post('admin/data-warga', [WargaController::class, 'store'])->name('warga.store');
+Route::get('admin/data-warga', [WargaController::class, 'index']);
+Route::post('admin/warga/delete/{nik}', [WargaController::class, 'destroy'])->name('warga.delete');

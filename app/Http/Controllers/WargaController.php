@@ -31,7 +31,7 @@ class WargaController extends Controller
     public function destroy($nik){
         $data = Warga::find($nik);
         $data->delete();
-        return redirect('/data-warga');
+        return redirect('admin/data-warga');
     }
 
     public function warga(){
