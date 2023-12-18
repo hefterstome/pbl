@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -23,10 +25,10 @@ class AdminController extends Controller
         $data->nip = $request->nip;
         $data->nama = $request->nama;
         $data->email = $request->email;
-        $data->password = $request->password;
+        $data->password = Hash::make($request->password);
         $data->no_hp = $request->no_hp;
         $data->save();
-        return redirect('/admin/data-admin');
+        return redirect('/admin/admin');
     }
 
     public function show(string $id){}
@@ -38,21 +40,49 @@ class AdminController extends Controller
 
     }
 
-    public function update(Request $request, $nip)
-    {
-        $data = Admin::findOrFail($nip);
-        $data->nip = $request->nip; 
-        $data->nama = $request->nama;
-        $data->email = $request->email;
-        $data->no_hp = $request->no_hp;
-        $data->update();
-        return redirect('admin/data-admin');
-    }
+    // public function update(Request $request, $nip)
+    // {
+    //     $data = Admin::findOrFail($nip);
+    //     $data->nip = $request->nip; 
+    //     $data->nama = $request->nama;
+    //     $data->email = $request->email;
+    //     $data->no_hp = $request->no_hp;
+    //     $data->update();
+    //     return redirect('admin/admin');
+    // }
 
     public function destroy(string $nip)
     {
         $data = Admin::find($nip);
         $data->delete();
-        return redirect('admin/data-admin');
+        return redirect('admin/admin');
     }
+
+    public function profil()
+    {
+        $nip = Auth::guard('admin')->user()->nip;
+        $profil = Admin::find($nip);
+        return view('dashboard_admin.profil.index', compact('profil'));
+    }
+    
+    public function profilUpdate(Request $request,$nip){
+        $data=Admin::find($nip);
+        $data->nama = $request->nama;
+        $data->email = $request->email;
+        $data->password = Hash::make($request->password);
+        $data->no_hp = $request->no_hp;
+        $data->update();
+        return redirect('/admin');
+    }
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect('/admin');
+    }
+
+    public function beranda(){
+        return view('dashboard_admin.admin');
+    }
+
 }

@@ -1,4 +1,4 @@
-@extends('dashboard_admin.admin')
+{{-- @extends('dashboard_admin.admin')
 @section('content-admin')
 
 <div class="container">
@@ -21,11 +21,6 @@
                 <input type="email" class="form-control" id="email" name="email"
                 value="{{$data->email}}">
             </div>
-            <!-- <div class="form-group row">
-                <label for="password">Password<span class="text-danger">*</span></label>
-                <input type="password" class="form-control" id="password" name="password"
-                value="{{$data->password}}">
-            </div> -->
             <div class="form-group row">
                 <label for="no_hp">Nomor HP<span class="text-danger">*</span></label>
                 <input type="tel" class="form-control" id="no_hp" name="no_hp"
@@ -33,7 +28,7 @@
             </div>
             <br>
             <div class="d-flex justify-content-end mt-2">
-                <a href="/data-admin" class="btn btn-secondary mx-2">Kembali</a>
+                <a href="/admin/beranda" class="btn btn-secondary mx-2">Kembali</a>
                 <button type="submit" class="btn btn-primary mx-2">Ubah</button>
             </div>
         </div>
@@ -41,4 +36,4 @@
 </div>
 
 @endsection
-    
+     --}}

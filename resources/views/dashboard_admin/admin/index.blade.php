@@ -33,7 +33,7 @@
                         <form action="{{ route('admin.delete', $data->nip) }}" method="post">
                        
                         @csrf
-                        <a href="{{ route('admin.update', $data->nip) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square" style="color: white;"></i></a>
+                        {{-- <a href="{{ route('admin.update', $data->nip) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square" style="color: white;"></i></a> --}}
                         <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </form>
                 </td>

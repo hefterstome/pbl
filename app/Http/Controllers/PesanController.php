@@ -29,6 +29,6 @@ class PesanController extends Controller
     public function destroy($id){
         $data = Pesan::find($id);
         $data->delete();
-        return redirect('/admin/data-pesan');
+        return redirect('/admin/pesan');
     }
 }

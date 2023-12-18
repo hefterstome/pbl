@@ -26,7 +26,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
       <a class="logo me-auto" href="index.html" style="color: azure;">
-        <img src="assets/img/home/logo.png" alt="" class="img-fluid">
+        <img src={{ asset('assets/img/logo.png') }} alt="" class="img-fluid">
         Sinergi Bansos
       </a>
 
@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-          <img src="assets/img/home/donasi.png" class="img-fluid animated" alt="">
+          <img src="{{ asset('assets/img/donasi.png') }}" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
