@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('warga',function(Blueprint $table){
-            $table->char('nik');
+            $table->char('nik')->primary();
             $table->string('nama');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('password');
             $table->string('no_hp');
             $table->timestamps();

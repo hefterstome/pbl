@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Login 01</title>
+  	<title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -21,12 +21,13 @@
 		      		<span class="fa fa-user-o"></span>
 		      	</div>
 		      	<h3 class="text-center mb-4">LOGIN ADMIN</h3>
-						<form action="#" class="login-form">
+						<form action="{{ route('login.admin') }}" method="post" class="login-form">
+							@csrf
 		      		<div class="form-group">
-		      			<input type="text" class="form-control rounded-left" placeholder="Username" required>
+		      			<input type="email" class="form-control rounded-left" placeholder="Username" name="email" id="email" required>
 		      		</div>
 	            <div class="form-group d-flex">
-	              <input type="password" class="form-control rounded-left" placeholder="Password" required>
+	              <input type="password" class="form-control rounded-left" name="password" id="password" placeholder="Password" required>
 	            </div>
 	            <div class="form-group text-center"> 
 					<button type="submit" class="form-control btn rounded submit px-4" style="background-color: #37517e;">
