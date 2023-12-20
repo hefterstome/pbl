@@ -23,7 +23,7 @@
                 <td>{{ $data->nama }}</td>
                 <td>{{ $data->status }}</td>
                 <td>
-                    <a href="/warga/pengajuan/detail" class="btn btn-success">Detail</a>
+                    <a href="{{ route('pengajuan.detailwarga', $data->no_kk) }}" class="btn btn-success">Detail</a>
                 </td>
             </tr>
             @endforeach

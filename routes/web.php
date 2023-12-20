@@ -30,13 +30,13 @@ Route::middleware(['auth:warga'])->group(function () {
     Route::get('/warga/profil', [WargaController::class, 'profil'])->name('warga.profil');
     Route::post('warga/profil/update/{nik}', [WargaController::class, 'profilUpdate'])->name('warga.profil.update');
     
-    Route::get('/warga', [WargaController::class, 'warga']);
-    Route::get('/warga/beranda', [WargaController::class, 'beranda']);
+    // Route::get('/warga/beranda', [WargaController::class, 'beranda']);
     Route::get('/warga/form', [WargaController::class, 'form']);
     Route::get('/warga/logout', [WargaController::class, 'logout'])->name('logout');
     
     Route::get('/warga/pengajuan', [PengajuanController::class, 'pengajuanWarga']);
     Route::post('warga/pengajuan', [PengajuanController::class, 'store'])->name('pengajuan.store');
+    Route::get('warga/pengajuan/detail{kk}', [PengajuanController::class, 'pengajuanDetail'])->name('pengajuan.detailwarga');
 });
 
 // Halaman Utama
@@ -44,7 +44,7 @@ Route::get('/', [HomeController::class, 'home']);
 Route::get('/login', [HomeController::class, 'login']);
 Route::get('/admin', [HomeController::class, 'admin']);
 
-Route::post('/warga', [LoginController::class, 'login'])->name('login');
+Route::post('/warga/profil', [LoginController::class, 'login'])->name('login');
 
 Route::post('/login/admin', [LoginController::class, 'loginAdmin'])->name('login.admin');
 
@@ -73,8 +73,11 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('admin/warga/delete/{nik}', [WargaController::class, 'destroy'])->name('warga.delete');
 
     Route::get('admin/pengajuan', [PengajuanController::class, 'index']);
+    Route::get('admin/pengajuan/terima', [PengajuanController::class, 'dataDiterima']);
+    Route::get('admin/pengajuan/tolak', [PengajuanController::class, 'dataDitolak']);
     Route::get('admin/pengajuan/terima/{kk}', [PengajuanController::class, 'updateTerima'])->name('Diterima');
     Route::get('admin/pengajuan/tolak/{kk}', [PengajuanController::class, 'updateTolak'])->name('Ditolak');
+    Route::get('admin/pengajuan/detail/{kk}', [PengajuanController::class, 'show'])->name('pengajuan.detail');
 
     Route::get('/admin/logout', [AdminController::class, 'logout'])->name('logout');
 });

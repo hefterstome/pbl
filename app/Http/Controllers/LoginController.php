@@ -29,7 +29,7 @@ class LoginController extends Controller
         ]);
     
         if (Auth::guard('warga')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('/warga');
+            return redirect()->intended('/warga/profil');
         } else {
             return redirect('/login');
         }

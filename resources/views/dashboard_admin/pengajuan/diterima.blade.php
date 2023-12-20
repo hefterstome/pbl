@@ -28,8 +28,6 @@
                 <td class="text-center">
                         @csrf
                         <a href="{{ route('pengajuan.detail', $data->no_kk) }}" class="btn btn-primary">Detail</a>
-                        <a href="{{ route('Diterima', $data->no_kk) }}" class="btn btn-success">Terima</a>
-                        <a href="{{ route('Ditolak', $data->no_kk)  }}" class="btn btn-danger">Tolak</a>                    
                 </td>
             </tr>
             @endforeach
