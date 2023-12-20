@@ -52,8 +52,7 @@
                       <div class="text-xs font-weight-bold text-gray-800 text-uppercase mb-1">Pengajuan</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">666</div>
-                          {{-- <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{\App\Models\Pengajuan::countPengajuan()}}</div> --}}
+                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{\App\Models\Pengajuan::countPengajuan()}}</div>
                         </div>
                       </div>
                     </div>
@@ -61,7 +60,7 @@
                         <i class="fa-solid fa-check-to-slot fa-2x text-gray-300"></i>
                     </div>
                     <div class="col-auto mt-4">
-                        <a href="#" class="btn btn-primary">Lihat Selengkapnya</a>
+                        <a href="/admin/pengajuan" class="btn btn-primary">Lihat Selengkapnya</a>
                     </div>
                   </div>
                 </div>

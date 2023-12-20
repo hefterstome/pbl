@@ -125,6 +125,7 @@
         <div class="section-title">
           <h2>Contact</h2>
           <p>Kontak kami untuk informasi lebih lanjut</p>
+          @include('message.alert')
         </div>
 
         <div class="row">
@@ -152,30 +153,35 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            @if ($errors->any())
-              <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <ul>
-                  @foreach ($errors->all() as $error)
-                  <li>{{ $error}}</li>
-                  @endforeach
-                </ul>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-            @endif
              <form action="{{ route('pesan.store') }}" method="POST" class="kontak-pesan"> 
                  @csrf 
                 <h4 class="keterangan-form text-center mb-2" style="font-size: 18px; color: #37517e;">Isi formulir untuk memberikan laporan atau pesan</h4>
                 <div class="form-group mt-4">
                   <label for="nama">Nama</label>
-                  <input type="text" name="nama" class="form-control" id="nama">
+                  <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" id="nama">
+                  @error('nama')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                  @enderror
                 </div>
                 <div class="form-group mt-2">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" name="email" id="email">
+                  <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email">
+                  @error('email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                  @enderror                
                 </div>
               <div class="form-group mt-2">
                 <label for="isi">Pesan</label>
-                <textarea class="form-control" name="isi" id="isi" rows="10"></textarea>
+                <textarea class="form-control @error('isi') is-invalid @enderror" name="isi" id="isi" rows="10"></textarea>
+                @error('isi')
+                  <div class="invalid-feedback">
+                      {{ $message }}
+                  </div>
+                @enderror              
               </div>
               <div class="text-center mt-4">
                 <button type="submit">Kirim</button>

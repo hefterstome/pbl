@@ -21,20 +21,13 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
-        $message = [
-            'required' => ':attribute tidak boleh kosong',
-            'unique' => ':attribute sudah digunakan',
-            'numeric' => ':attribute harus berupa angka',
-            'min' => 'Panjang :attribute minimal :min karakter',
-            'max' => 'Panjang :attribute maksimal :max karakter'
-        ];
         $this->validate($request, [
-            'nip' => 'required|unique:admin,nip|numeric|min:18|max:18',
-            'nama' => 'required|max:255',
-            'email' => 'required|email|unique:admin,email|max:255',
-            'password' => 'required|min:6|max:255',
-            'no_hp' => 'required|numeric|min:10|max:13'
-        ], $message);
+            'nip' => 'required|unique:admin,nip|numeric|min:18',
+            'nama' => 'required',
+            'email' => 'required|email|unique:admin,email',
+            'password' => 'required|min:6',
+            'no_hp' => 'required|numeric|min:10'
+        ]);
         $data = new Admin();
         $data->nip = $request->nip;
         $data->nama = $request->nama;
@@ -69,7 +62,7 @@ class AdminController extends Controller
     {
         $data = Admin::find($nip);
         $data->delete();
-        return redirect('admin/admin');
+        return redirect('admin/admin')->with('success','Data berhasil dihapus!');
     }
 
     public function profil()
@@ -80,6 +73,12 @@ class AdminController extends Controller
     }
     
     public function profilUpdate(Request $request,$nip){
+        $this->validate($request, [
+            'nama' => 'required',
+            'email' => 'required|email|unique:warga,email',
+            // 'password' => 'required|min:6|max:255',
+            'no_hp' => 'required|numeric|min:10'
+        ]);
         $data=Admin::find($nip);
         $data->nama = $request->nama;
         $data->email = $request->email;

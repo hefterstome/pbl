@@ -17,18 +17,11 @@ class PesanController extends Controller
     }
 
     public function store(Request $request){
-        $message = [
-            'required' => ':attribute tidak boleh kosong',
-            'unique' => ':attribute sudah digunakan',
-            'numeric' => ':attribute harus berupa angka',
-            'min' => 'Panjang :attribute minimal :min karakter',
-            'max' => 'Panjang :attribute maksimal :max karakter'
-        ];
         $this->validate($request, [
-            'nama' => 'required|max:255',
-            'email' => 'required|email|max:255',
-            'isi' => 'required|max:255'
-        ], $message);
+            'nama' => 'required',
+            'email' => 'required|email',
+            'isi' => 'required'
+        ]);
         $data = new Pesan();
         $data->id = $request->id;
         $data->nama = $request->nama;
@@ -41,6 +34,6 @@ class PesanController extends Controller
     public function destroy($id){
         $data = Pesan::find($id);
         $data->delete();
-        return redirect('/admin/pesan');
+        return redirect('/admin/pesan')->with('success','Data berhasil dihapus!');
     }
 }

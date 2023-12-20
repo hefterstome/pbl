@@ -14,6 +14,13 @@ class Pengajuan extends Model
     protected $guarded = [];
     public $incrementing = false;
 
+    public static function countPengajuan(){
+        $data=Pengajuan::count();
+        if($data){
+            return $data;
+        }
+        return 0;
+    }
     
 
     // Ini untuk beranda dashboard

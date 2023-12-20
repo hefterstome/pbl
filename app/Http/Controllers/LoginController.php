@@ -15,9 +15,9 @@ class LoginController extends Controller
         ]);
     
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('/admin/beranda');
+            return redirect()->intended('/admin/beranda')->with('primary', 'Berhasil login');
         } else {
-            return redirect('/admin');
+            return redirect('/admin')->with('danger', 'Email atau password salah. Silakan coba lagi.');
         }
     }
 
@@ -29,9 +29,9 @@ class LoginController extends Controller
         ]);
     
         if (Auth::guard('warga')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('/warga');
+            return redirect()->intended('/warga/profil')->with('primary', 'Berhasil login');
         } else {
-            return redirect('/login');
+            return redirect('/login')->with('danger', 'Email atau password salah. Silakan coba lagi.');
         }
     }
     

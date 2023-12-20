@@ -26,7 +26,7 @@
                 <td class="text-center">
                     <form action="{{ route('warga.delete', $data->nik) }}" method="post">
                         @csrf
-                        <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                        <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></i></button>
                     </form>
                 </td>
             </tr>

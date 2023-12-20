@@ -16,20 +16,13 @@ class WargaController extends Controller
     }
 
     public function store(Request $request){
-        $message = [
-            'required' => ':attribute tidak boleh kosong',
-            'unique' => ':attribute sudah digunakan',
-            'numeric' => ':attribute harus berupa angka',
-            'min' => 'Panjang :attribute minimal :min karakter',
-            'max' => 'Panjang :attribute maksimal :max karakter'
-        ];
         $this->validate($request, [
-            'nik' => 'required|unique:warga,nik|numeric|min:18|max:18',
-            'nama' => 'required|max:255',
-            'email' => 'required|email|unique:warga,email|max:255',
-            'password' => 'required|min:6|max:255',
-            'no_hp' => 'required|numeric|min:10|max:13'
-        ], $message);
+            'nik' => 'required|unique:warga,nik|numeric|min:16',
+            'nama' => 'required',
+            'email' => 'required|email|unique:warga,email',
+            'password' => 'required|min:6',
+            'no_hp' => 'required|numeric|min:10'
+        ]);
         $data = new Warga();
         $data->nik = $request->nik;
         $data->nama = $request->nama;
@@ -43,7 +36,7 @@ class WargaController extends Controller
     public function destroy($id){
         $data = Warga::find($id);
         $data->delete();
-        return redirect('admin/warga');
+        return redirect('admin/warga')->with('success','Data berhasil dihapus!');
     }
 
     public function profil()
@@ -54,6 +47,12 @@ class WargaController extends Controller
     }
 
     public function profilUpdate(Request $request,$nik){
+        $this->validate($request, [
+            'nama' => 'required',
+            'email' => 'required|email|unique:warga,email',
+            // 'password' => 'required|min:6|max:255',
+            'no_hp' => 'required|numeric|min:10'
+        ]);
         $data=Warga::find($nik);
         $data->nama = $request->nama;
         $data->email = $request->email;
