@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         // Schema::create('pengajuan',function(Blueprint $table){
-        //     $table->id();
-        //     $table->char('no_kk');
+        //     $table->char('no_kk',16)->primary();
         //     $table->string('ktp');
         //     $table->string('kk');
         //     $table->string('surat_pendukung');

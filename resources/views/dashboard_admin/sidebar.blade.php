@@ -23,8 +23,13 @@
             </a>
         </li>
         <li>
+            <a href="/admin/pengajuan" class="nav-link text-white">
+            Pengajuan
+            </a>
+        </li>
+        <li>
             <a href="/admin/warga" class="nav-link text-white">
-            Data Warga 
+            Data Warga
             </a>
         </li>
         <li>

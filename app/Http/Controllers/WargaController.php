@@ -26,8 +26,8 @@ class WargaController extends Controller
         return redirect('/login');
     }
 
-    public function destroy($nik){
-        $data = Warga::find($nik);
+    public function destroy($id){
+        $data = Warga::find($id);
         $data->delete();
         return redirect('admin/data-warga');
     }
@@ -58,9 +58,7 @@ class WargaController extends Controller
     public function warga(){
         return view('dashboard_warga.warga');
     }
-    public function pengajuan(){
-        return view('dashboard_warga.pengajuan.index');
-    }
+
 
     public function form(){
         return view('dashboard_warga.pengajuan.form');
@@ -68,7 +66,5 @@ class WargaController extends Controller
     public function beranda(){
         return view('dashboard_warga.warga');
     }
-
-
 
 }

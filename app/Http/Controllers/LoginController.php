@@ -16,6 +16,8 @@ class LoginController extends Controller
     
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('/admin/beranda');
+        } else {
+            return redirect('/admin');
         }
     }
 
@@ -28,6 +30,8 @@ class LoginController extends Controller
     
         if (Auth::guard('warga')->attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('/warga');
+        } else {
+            return redirect('/login');
         }
     }
     
