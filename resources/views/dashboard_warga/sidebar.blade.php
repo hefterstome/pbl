@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px; height:auto; background: #37517e;">
+<div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px; height:100vh; background: #37517e;">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" style="width: 40px; height: 40px;">
         <strong class="fs-4 mx-2">Sinergi Bansos</strong>

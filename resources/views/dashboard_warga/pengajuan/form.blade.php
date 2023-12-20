@@ -6,7 +6,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-    <form action="#" method="post" enctype="multipart/form-data"> 
+    <form action="{{ route('pengajuan.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
         <div class="row">
             <div class="col-6">
                 <div class="form-group">
@@ -38,12 +39,11 @@
                     <input type="file" class="form-control" id="slip_gaji" name="slip_gaji" accept="image/*,.pdf" required >
                 </div>
             </div>
-    
             <div class="col-6">
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="nik">NIK <span class="text-danger">*</span></label>
                     <input class="form-control" type="text" name="nik" id="nik" required placeholder="Masukkan NIK" >
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label for="email" class="form-label">Email<span class="text-danger">*</span></label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email">
@@ -78,11 +78,10 @@
             <label for="surat_pendukung" class="form-label">Surat Pendukung<span class="text-danger">*</span></label>
             <input type="file" class="form-control" id="surat_pendukung" name="surat_pendukung" accept="image/*" required>
         </div> 
+        <div class="d-flex justify-content-end mt-4">
+            <button type="submit" class="btn btn-primary">Kirim</button>
+        </div>
     </form>
-    <div class="d-flex justify-content-end mt-4">
-        <button type="submit" class="btn btn-primary">Kirim</button>
-    </div>
 </div>
 
 @endsection
-    
