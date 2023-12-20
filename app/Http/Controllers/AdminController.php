@@ -82,7 +82,7 @@ class AdminController extends Controller
     }
 
     public function beranda(){
-        return view('dashboard_admin.admin');
+        return view('dashboard_admin.beranda.index');
     }
 
 }

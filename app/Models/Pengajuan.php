@@ -10,4 +10,13 @@ class Pengajuan extends Model
     use HasFactory;
     protected $table = 'pengajuan';
     protected $primaryKey = 'no_kk';
+
+    // Ini untuk beranda dashboard
+    // public static function countPengajuan(){
+    //     $data=Pengajuan::count();
+    //     if($data){
+    //         return $data;
+    //     }
+    //     return 0;
+    // }
 }

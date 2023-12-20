@@ -11,4 +11,12 @@ class Pesan extends Model
     protected $table = 'pesan';
     protected $primaryKey = 'id';
     protected $fillable = ['nama','email','isi'];
+
+    public static function countPesan(){
+        $data=Pesan::count();
+        if($data){
+            return $data;
+        }
+        return 0;
+    }
 }

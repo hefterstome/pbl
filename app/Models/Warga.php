@@ -12,4 +12,12 @@ class Warga extends Authenticatable
     protected $table = 'warga';
     protected $primaryKey = 'nik';
     protected $fillable = ['nik','nama','email','password','no_hp'];
+
+    public static function countWarga(){
+        $data=Warga::count();
+        if($data){
+            return $data;
+        }
+        return 0;
+    }
 }

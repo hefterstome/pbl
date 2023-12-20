@@ -22,18 +22,18 @@
 		      	</div>
 		      	<h3 class="text-center mb-4">LOGIN ADMIN</h3>
 						<form action="{{ route('login.admin') }}" method="post" class="login-form">
-							@csrf
-		      		<div class="form-group">
-		      			<input type="email" class="form-control rounded-left" placeholder="Username" name="email" id="email" required>
-		      		</div>
-	            <div class="form-group d-flex">
-	              <input type="password" class="form-control rounded-left" name="password" id="password" placeholder="Password" required>
-	            </div>
-	            <div class="form-group text-center"> 
-					<button type="submit" class="form-control btn rounded submit px-4" style="background-color: #37517e;">
-						<p style="color: #FFFFFF; margin: 0; font-size: 24px;">Login</p>
-					</button>
-				</div>			
+						@csrf
+						<div class="form-group">
+							<input type="email" class="form-control rounded-left" placeholder="Username" name="email" id="email" required>
+						</div>
+						<div class="form-group d-flex">
+							<input type="password" class="form-control rounded-left" name="password" id="password" placeholder="Password" required>
+						</div>
+						<div class="form-group text-center"> 
+							<button type="submit" class="form-control btn rounded submit px-4" style="background-color: #37517e;">
+								<p style="color: #FFFFFF; margin: 0; font-size: 24px;">Login</p>
+							</button>
+						</div>			
 	            </div>
 	          </form>
 	        </div>

@@ -147,9 +147,7 @@
                 <h4 style="font-size: 20px; color: #37517e; padding: 0 0 0 60px;">Telephone</h4>
                 <p style="padding: 0 0 10px 60px; font-size: 14px; color: #6182ba;">085 111 222 33</p>
               </div>
-
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8796675881426!2d111.97726057440227!3d-7.802562077454478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7856c8ee550497%3A0x3f8ff2e0bc9b9718!2sPSDKU%20POLINEMA%20di%20Kota%20Kediri%20kampus%202!5e0!3m2!1sid!2sid!4v1702463725933!5m2!1sid!2sid" width="100%" height="270" style="border:0;" frameborder="0" allowfullscreen></iframe>
-              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe> -->
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
           </div>
 

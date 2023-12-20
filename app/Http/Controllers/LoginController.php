@@ -10,19 +10,19 @@ class LoginController extends Controller
     public function loginAdmin(Request $request)
     {
         $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
     
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('/admin');
+            return redirect()->intended('/admin/beranda');
         }
     }
 
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
     
