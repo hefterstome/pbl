@@ -24,7 +24,7 @@
                 <td class="text-center">
                     <form action="{{ route('pesan.delete', $data->id) }}" method="post">
                         @csrf
-                        <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></i></button>
+                        <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </form>
                 </td>
             </tr>

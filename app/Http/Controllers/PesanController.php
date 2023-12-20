@@ -17,18 +17,23 @@ class PesanController extends Controller
     }
 
     public function store(Request $request){
+        $this->validate($request, [
+            'nama' => 'required',
+            'email' => 'required|email',
+            'isi' => 'required'
+        ]);
         $data = new Pesan();
         $data->id = $request->id;
         $data->nama = $request->nama;
         $data->email = $request->email;
         $data->isi = $request->isi;
         $data->save();
-        return redirect('/');
+        return redirect('/')->with('success','Pesan telah terkirim. Terima kasih!');
     }
 
     public function destroy($id){
         $data = Pesan::find($id);
         $data->delete();
-        return redirect('/admin/pesan');
+        return redirect('/admin/pesan')->with('success','Data berhasil dihapus!');
     }
 }
