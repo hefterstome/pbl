@@ -6,6 +6,7 @@
                     <div class="card">
                         <div class="card-header">Dashboard</div>
                         <div class="card-body">
+                            @include('message.alert')
                             @yield('content-admin')
                         </div>
                     </div>

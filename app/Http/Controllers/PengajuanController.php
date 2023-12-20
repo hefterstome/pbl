@@ -48,6 +48,23 @@ class PengajuanController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'no_kk' => 'required|numeric|min:16',
+            'nama' => 'required',
+            'email' => 'required|email',
+            'alamat' => 'required',
+            'pekerjaan' => 'required',
+            'pendapatan' => 'required|numeric',
+            'luas_bangunan' => 'required|numeric',
+            'jumlah_kendaraan' => 'required|numeric',
+            'jumlah_tanggungan_anak' => 'required|numeric',
+            'listrik_rumah' => 'required|numeric',
+            'foto_ktp' => 'required',
+            'foto_kk' => 'required',
+            'surat_pendukung' => 'required',
+            'slip_gaji' => 'required',
+            'foto_formal' => 'required'
+        ]);
         $data = new Pengajuan();
         $data->no_kk = $request->no_kk;
         $data->nik = auth()->user()->nik;

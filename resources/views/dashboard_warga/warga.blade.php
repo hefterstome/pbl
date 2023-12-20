@@ -6,6 +6,7 @@
                     <div class="card mt-4">
                         <div class="card-header">Dashboard Warga</div>
                         <div class="card-body">
+                            @include('message.alert')
                             @yield('content-warga')
                         </div>
                     </div>
