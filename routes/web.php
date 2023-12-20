@@ -46,7 +46,7 @@ Route::get('/login', [HomeController::class, 'login']);
 Route::post('/warga', [LoginController::class, 'login'])->name('login');
 
 Route::get('/admin', [HomeController::class, 'admin']);
-Route::post('/admin', [LoginController::class, 'loginAdmin'])->name('login.admin');
+Route::post('/login/admin', [LoginController::class, 'loginAdmin'])->name('login.admin');
 
 Route::get('/admin/beranda', [AdminController::class, 'beranda']);
 Route::get('/registrasi', [HomeController::class, 'registrasi']);
