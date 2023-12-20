@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-center">
         <div class="d-flex flex-column">
             <img src="{{ asset('assets/img/profile.jpg') }}" alt="" width="100" height="100" class="rounded-circle">            
-            <strong class="text-white text-center pt-3 fs-4">Admin</strong>
+            <strong class="text-white text-center pt-3 fs-4">{{ auth()->user()->nama }}</strong>
         </div>
     </div>
     <hr>
@@ -24,7 +24,17 @@
         </li>
         <li>
             <a href="/admin/pengajuan" class="nav-link text-white">
-            Pengajuan
+            Data Pengajuan
+            </a>
+        </li>
+        <li>
+            <a href="/admin/pengajuan/terima" class="nav-link text-white">
+            Data Pengajuan Diterima
+            </a>
+        </li>
+        <li>
+            <a href="/admin/pengajuan/tolak" class="nav-link text-white">
+            Data Pengajuan Ditolak
             </a>
         </li>
         <li>

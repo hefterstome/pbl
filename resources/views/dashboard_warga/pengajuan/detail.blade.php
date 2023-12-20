@@ -1,22 +1,12 @@
-@extends('dashboard_admin.admin')
+@extends('dashboard_warga.warga')
 
 @section('content')
 <div class="container">
     <div class="d-flex flex-row pt-4 align-items-end">
         <h2 class="col-6">Detail Pengajuan</h2>
-        @if ($dataPengajuan->status == 'sedang diproses')
             <div class="d-flex col-6 justify-content-end">
-                <a href="/admin/pengajuan" class="btn btn-primary">Kembali</a>
+                <a href="/warga/pengajuan" class="btn btn-primary">Kembali</a>
             </div>
-        @elseif($dataPengajuan->status == 'diterima')
-            <div class="d-flex col-6 justify-content-end">
-                <a href="/admin/pengajuan/terima" class="btn btn-primary">Kembali</a>
-            </div>
-        @else
-            <div class="d-flex col-6 justify-content-end">
-                <a href="/admin/pengajuan/tolak" class="btn btn-primary">Kembali</a>
-            </div>
-        @endif
     </div>
     <div class="row g-2">
         <div class="col-6">

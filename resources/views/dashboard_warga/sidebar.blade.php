@@ -7,16 +7,16 @@
     <div class="d-flex justify-content-center">
         <div class="d-flex flex-column">
             <img src="{{ asset('assets/img/profile.jpg') }}" alt="" width="100" height="100" class="rounded-circle">            
-            <strong class="text-white text-center pt-3 fs-4">Warga</strong>
+            <strong class="text-white text-center pt-3 fs-4">{{ auth()->user()->nama }}</strong>
         </div>
     </div>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a href="/warga/beranda" class="nav-link text-white" aria-current="page">
             Beranda
             </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
             <a href="/warga/profil" class="nav-link text-white" aria-current="page">
             Profil

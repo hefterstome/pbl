@@ -12,9 +12,22 @@ class PengajuanController extends Controller
      */
     public function index()
     {
-        $data = Pengajuan::all();
+        $data = Pengajuan::all()->where('status','sedang diproses');
         
         return view('dashboard_admin.pengajuan.index',['dataPengajuan' => $data]);
+    }
+    public function dataDiterima()
+    {
+        $data = Pengajuan::all()->where('status','diterima');
+        
+        return view('dashboard_admin.pengajuan.diterima',['dataPengajuan' => $data]);
+    }
+
+    public function dataDitolak()
+    {
+        $data = Pengajuan::all()->where('status','ditolak');
+        
+        return view('dashboard_admin.pengajuan.ditolak',['dataPengajuan' => $data]);
     }
 
     public function pengajuanWarga(){
@@ -24,12 +37,10 @@ class PengajuanController extends Controller
         return view('dashboard_warga.pengajuan.index',['dataPengajuan' => $data]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function pengajuanDetail($id){
+        $data = Pengajuan::find($id);
+
+        return view('dashboard_warga.pengajuan.detail',['dataPengajuan' => $data]);
     }
 
     /**
@@ -63,15 +74,9 @@ class PengajuanController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $data = Pengajuan::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        return view('dashboard_admin.pengajuan.detail',['dataPengajuan' => $data]);
     }
 
     /**
@@ -98,11 +103,4 @@ class PengajuanController extends Controller
         return redirect('/admin/pengajuan');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
