@@ -21,6 +21,20 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
+        $message = [
+            'required' => ':attribute tidak boleh kosong',
+            'unique' => ':attribute sudah digunakan',
+            'numeric' => ':attribute harus berupa angka',
+            'min' => 'Panjang :attribute minimal :min karakter',
+            'max' => 'Panjang :attribute maksimal :max karakter'
+        ];
+        $this->validate($request, [
+            'nip' => 'required|unique:admin,nip|numeric|min:18|max:18',
+            'nama' => 'required|max:255',
+            'email' => 'required|email|unique:admin,email|max:255',
+            'password' => 'required|min:6|max:255',
+            'no_hp' => 'required|numeric|min:10|max:13'
+        ], $message);
         $data = new Admin();
         $data->nip = $request->nip;
         $data->nama = $request->nama;
@@ -28,17 +42,17 @@ class AdminController extends Controller
         $data->password = Hash::make($request->password);
         $data->no_hp = $request->no_hp;
         $data->save();
-        return redirect('/admin/admin');
+        return redirect('/admin/admin')->with('success','Data berhasil ditambah!');
     }
 
-    public function show(string $id){}
+    // public function show(string $id){}
 
-    public function edit($nip)
-    {
-        $data = Admin::find($nip);
-        return view('dashboard_admin.admin.edit', compact('data'));
+    // public function edit($nip)
+    // {
+    //     $data = Admin::find($nip);
+    //     return view('dashboard_admin.admin.edit', compact('data'));
 
-    }
+    // }
 
     // public function update(Request $request, $nip)
     // {
@@ -61,18 +75,17 @@ class AdminController extends Controller
     public function profil()
     {
         $nip = Auth::guard('admin')->user()->nip;
-        $profil = Admin::find($nip);
-        return view('dashboard_admin.profil.index', compact('profil'));
+        $data = Admin::find($nip);
+        return view('dashboard_admin.profil.index', compact('data'));
     }
     
     public function profilUpdate(Request $request,$nip){
         $data=Admin::find($nip);
         $data->nama = $request->nama;
-        $data->email = $request->email;
         $data->password = Hash::make($request->password);
         $data->no_hp = $request->no_hp;
         $data->update();
-        return redirect('/admin');
+        return redirect('/admin')->with('success','Profil berhasil diubah. Silakan login kembali');
     }
 
     public function logout()
