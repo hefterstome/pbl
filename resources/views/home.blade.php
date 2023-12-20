@@ -152,20 +152,30 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            @if ($errors->any())
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <ul>
+                  @foreach ($errors->all() as $error)
+                  <li>{{ $error}}</li>
+                  @endforeach
+                </ul>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            @endif
              <form action="{{ route('pesan.store') }}" method="POST" class="kontak-pesan"> 
                  @csrf 
                 <h4 class="keterangan-form text-center mb-2" style="font-size: 18px; color: #37517e;">Isi formulir untuk memberikan laporan atau pesan</h4>
                 <div class="form-group mt-4">
                   <label for="nama">Nama</label>
-                  <input type="text" name="nama" class="form-control" id="nama" required>
+                  <input type="text" name="nama" class="form-control" id="nama">
                 </div>
                 <div class="form-group mt-2">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <input type="email" class="form-control" name="email" id="email">
                 </div>
               <div class="form-group mt-2">
                 <label for="isi">Pesan</label>
-                <textarea class="form-control" name="isi" id="isi" rows="10" required></textarea>
+                <textarea class="form-control" name="isi" id="isi" rows="10"></textarea>
               </div>
               <div class="text-center mt-4">
                 <button type="submit">Kirim</button>
@@ -183,7 +193,7 @@
         &copy; Copyright <strong><span>Manajemen Informatika 2E 2023</span></strong>. All Rights Reserved
       </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-b4gtTkp1zfV1Bpy5Fb1TKtL6Q5/JpOW0g5SRBpftjLXQcteq+6pndABbF9bejGdfo" crossorigin="anonymous"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 </body>

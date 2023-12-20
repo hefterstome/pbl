@@ -39,6 +39,7 @@ class PengajuanController extends Controller
     {
         $data = new Pengajuan();
         $data->no_kk = $request->no_kk;
+        $data->verifikator = 'admin';
         $data->nik = auth()->user()->nik;
         $data->nama = $request->nama;
         $data->email = $request->email;

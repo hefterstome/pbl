@@ -16,6 +16,20 @@ class WargaController extends Controller
     }
 
     public function store(Request $request){
+        $message = [
+            'required' => ':attribute tidak boleh kosong',
+            'unique' => ':attribute sudah digunakan',
+            'numeric' => ':attribute harus berupa angka',
+            'min' => 'Panjang :attribute minimal :min karakter',
+            'max' => 'Panjang :attribute maksimal :max karakter'
+        ];
+        $this->validate($request, [
+            'nik' => 'required|unique:warga,nik|numeric|min:18|max:18',
+            'nama' => 'required|max:255',
+            'email' => 'required|email|unique:warga,email|max:255',
+            'password' => 'required|min:6|max:255',
+            'no_hp' => 'required|numeric|min:10|max:13'
+        ], $message);
         $data = new Warga();
         $data->nik = $request->nik;
         $data->nama = $request->nama;
@@ -23,13 +37,13 @@ class WargaController extends Controller
         $data->password = Hash::make($request->password);
         $data->no_hp = $request->no_hp;
         $data->save();
-        return redirect('/login');
+        return redirect('/login')->with('primary','Registrasi berhasil, silakan login!');
     }
 
     public function destroy($id){
         $data = Warga::find($id);
         $data->delete();
-        return redirect('admin/data-warga');
+        return redirect('admin/warga');
     }
 
     public function profil()
@@ -43,10 +57,10 @@ class WargaController extends Controller
         $data=Warga::find($nik);
         $data->nama = $request->nama;
         $data->email = $request->email;
-        $data->password = Hash::make($request->password);
+        // $data->password = Hash::make($request->password);
         $data->no_hp = $request->no_hp;
         $data->update();
-        return redirect('/login');
+        return redirect('/login')->with('success','Profil berhasil diubah. Silakan login kembali');
     }
 
     public function logout()

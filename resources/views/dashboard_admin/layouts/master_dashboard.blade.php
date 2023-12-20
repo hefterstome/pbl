@@ -29,6 +29,10 @@
         $(document).ready(function (){
             $('#data-warga').DataTable();
         });
+        $(document).ready(function (){
+            $('#data-pengajuan').DataTable();
+        });
+        
     </script>
 </body>
 </html>

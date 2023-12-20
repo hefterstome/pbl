@@ -20,6 +20,10 @@
                 <form class="border px-4 pt-2 pb-3" method="post" action="{{ route('admin.profil.update',$profil->nip) }}">
                     @csrf
                     <div class="form-group">
+                        <label for="nip" class="col-form-label">NIP</label>
+                        <input id="nip" readonly type="text" name="nip" placeholder="Masukkan NIP" value="{{ $profil->nip }}" class="form-control">
+                    </div>
+                    <div class="form-group">
                         <label for="nama" class="col-form-label">Nama</label>
                         <input id="nama" type="text" name="nama" placeholder="Masukkan Nama" value="{{ $profil->nama }}" class="form-control">
                     </div>
@@ -27,10 +31,10 @@
                         <label for="email" class="col-form-label">Email</label>
                         <input id="email" type="email" name="email" placeholder="Masukkan email" value="{{ $profil->email }}" class="form-control">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="password" class="col-form-label">Password</label>
                         <input id="password" type="password" name="password" placeholder="Masukkan Password Baru" value="{{ $profil->password }}" class="form-control">
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label for="no_hp" class="col-form-label">Nomor HP</label>
                         <input id="no_hp" type="tel" name="no_hp" placeholder="Masukkan Nomor HP" value="{{ $profil->no_hp }}" class="form-control">
