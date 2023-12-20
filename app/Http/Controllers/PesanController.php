@@ -15,15 +15,15 @@ class PesanController extends Controller
     public function create(){
         return view('home');
     }
-
-    public function store(Request $request){
+    
+    public function store(Request $request){ 
         $data = new Pesan();
         $data->id = $request->id;
         $data->nama = $request->nama;
         $data->email = $request->email;
         $data->isi = $request->isi;
         $data->save();
-        return redirect('/');
+        return redirect('/')->with('success','Pesan telah terkirim. Terima kasih!');
     }
 
     public function destroy($id){
